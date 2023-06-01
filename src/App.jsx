@@ -1,24 +1,26 @@
-import foods from "./foods.json";
+import foods from './foods.json';
 import './App.css';
-import { useState } from "react";
-import Food from "./components/Food";
-import FoodBox from "./components/FoodBox";
+import { useState } from 'react';
+import Food from './components/Food';
+import FoodBox from './components/FoodBox';
+import { Row, Divider, Button } from 'antd';
 
-function App () {
-  const [foodDb, setFoodDb] = useState(foods)
+function App() {
+  const [foodDb, setFoodDb] = useState(foods);
   return (
-  <div className="App">
-    {foodDb.map((foods) => (
-      <Food key={foods.name} foods={foods}/>
-    ))}
-    <FoodBox food={ {
-  name: "Orange",
-  calories: 85,
-  image: "https://i.imgur.com/abKGOcv.jpg",
-  servings: 1
-}} />
-    
-  </div>
-  ) 
+    <div className="App">
+      <Button> Hide Form / Add New Food </Button>
+
+      {/* Display Search component here */}
+
+      <Divider>Food List</Divider>
+
+      <Row style={{ width: '100%', justifyContent: 'center' }}>
+        {foodDb.map((food) => (
+          <FoodBox key={food.name} food={food} />
+        ))}
+      </Row>
+    </div>
+  );
 }
 export default App;
