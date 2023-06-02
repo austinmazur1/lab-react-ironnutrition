@@ -1,7 +1,7 @@
 import { Divider, Input } from 'antd';
 
 //filter function as prop from app 
-const Search = ({ filterFoods, filteredFoods }) => {
+const Search = ({ filterFoods }) => {
     return (
         <>
           <Divider>Search</Divider>
